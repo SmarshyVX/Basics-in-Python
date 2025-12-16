@@ -29,7 +29,7 @@ while True:
         else:
             inventory[option]["stock"] -= amount
             print(f"Sale successful! Cost: GHS {total_cost}. \n{inventory[option]['stock']} units of {option} remaining. ")
-            break
+            
     else:
         print("Item not found in stock. Check spelling.")
 
