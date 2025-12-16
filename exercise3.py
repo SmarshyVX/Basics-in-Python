@@ -18,10 +18,12 @@ while True:
     if option == "exit":
         print("Closing sales. Total transactions completed.")
         break
+        
     elif option in inventory :
         amount = int(input("Enter Quantity To Buy: "))
         total_cost = amount * inventory[option]["price_per_unit"]
         total_cost = round(total_cost, 2)
+        
         if amount > inventory[option]["stock"]:
             print(f"Sorry, only {inventory[option]['stock']} units of {option} remaining. ")
         else:
@@ -36,14 +38,13 @@ while True:
 fixed_monthly_charge = 15.00
 
 consumption = float(input("Total water consumption for the month (in cubic meters): "))
-rate = {}
 
 if consumption >= 0 and consumption <= 15:rate = 0.90
 
 elif consumption >= 16 and consumption <= 30:rate = 1.20
+    
+elif consumption > 30: rate = 1.80
 
-elif consumption >= 30 :rate = 1.80
-else :
     print("Invalid input,please try again.")
 
 total_bill = fixed_monthly_charge + consumption * rate
@@ -52,7 +53,7 @@ total_cost = round(total_bill, 2)
 print("--- Monthly Water Bill Summary ---")
 print(f"Consumption: {consumption} cubic meters")
 print("fixed monthly charge: GHS15.00")
-print(f"Consumption Cost: GHS{consumption * rate}")
+print(f"Consumption cost: GHS {round(consumption * rate, 2)}")
 print(f"Total cost: GHS{total_cost}")
 
 
@@ -79,7 +80,7 @@ print(f"Total number of speeding violations: {violations_recorded}")
 
 print(f"Percentage of speeding vehicles: {round(percentage_speeding, 2)}%")
 
-print(f"Average speed : {sum(recorded_speeds) / len(recorded_speeds)}km/h ")
+print(f"Average speed : {sum(recorded_speeds) / len(recorded_speeds, 2)}km/h ")
 
 focused_segment = recorded_speeds[2:8]
 print(f"Speeds for focused inspection segment (3rd to 8th vehicle): {focused_segment}")
