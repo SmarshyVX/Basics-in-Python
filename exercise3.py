@@ -45,7 +45,8 @@ elif consumption >= 16 and consumption <= 30:rate = 1.20
     
 elif consumption > 30: rate = 1.80
 
-else: print("Invalid input, please try again.")
+else: 
+    print("Invalid input, please try again.")
      rate = 0
 
 total_bill = fixed_monthly_charge + consumption * rate
